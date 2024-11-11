@@ -18,35 +18,103 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		
-
+		System.out.println("wordladder \n ------------ \n");
 		HashSet<String> words = new HashSet<>();
 
 
 		long start = System.currentTimeMillis();
 
-		String inputFileName = args[0]; // dictionary filename
-		String word1 = args[1]; // first word
-		String word2 = args[2]; // second word
-  
+		//String inputFileName = args[0]; // dictionary filename
+		//String word1 = args[1]; // first word
+		//String word2 = args[2]; // second word
+
+
+
+
+		String inputFileName = "assessed_exercise\\wordladder\\words5.txt";
+		String word1 = "print";
+		String word2 = "paint";
+
+
+
+
 		FileReader reader = new FileReader(inputFileName);
 		Scanner in = new Scanner(reader);
 		
 		// read in the data here
 		while(in.hasNextLine()){
-			String line = in.nextLine();
+			String line = in.nextLine().trim();
 			words.add(line);
 		}
 
-		Graph g = new Graph(0);
+
+		in.close();
+		reader.close();
+
+
+
+
+		Graph g = new Graph(words.size());
+
+		HashMap<String, Integer> wordToIndex = new HashMap<>();
+		ArrayList<String> indexToWord = new ArrayList<>();
+		int index = 0;
+		for(String word: words){
+			wordToIndex.put(word,index);
+			indexToWord.add(word);
+			index++;
+		}
+		/*&
+		 * 		for(int i = 0; i < words.size();i++){
+			g.setVertex(i);
+		}
+		 */
+
 
 		// create graph here
 
-		reader.close();
 
         
 		// do the work here
 		
 
+		//build the adjacency lists
+		for(String word : words){
+			int wordIndex = wordToIndex.get(word);
+			Vertex vertex = g.getVertex(wordIndex);
+
+			List<String> neighbours = Util.generateNeighbors(word, words);
+
+			for(String neighbour : neighbours){
+				int neighbourIndex = wordToIndex.get(neighbour);
+				vertex.addToAdjList(neighbourIndex);
+
+				Vertex neighbourVertex = g.getVertex(neighbourIndex);
+				neighbourVertex.addToAdjList(wordIndex);
+			}
+		}
+		Integer startIndex = wordToIndex.get(word1);
+		Integer endIndex = wordToIndex.get(word2);
+
+		if(startIndex == null || endIndex == null){
+			System.out.println("Start or end word not in dictionary");
+			return;
+		}
+
+		List<Integer> pathIndices = g.bfs(startIndex, endIndex);
+
+		if (pathIndices == null) {
+			System.out.println("No ladder possible.");
+		} else {
+			int pathLength = pathIndices.size() - 1;
+			System.out.println("Length of shortest path: " + pathLength);
+		
+			// Convert indices back to words and print the ladder
+			for (int idx : pathIndices) {
+				String word = indexToWord.get(idx);
+				System.out.println(word);
+			}
+		}
 
 
 

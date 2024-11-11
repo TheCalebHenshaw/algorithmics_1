@@ -1,0 +1,214 @@
+wordladder
+----------
+
+word1 = print
+word2 = paint
+shortest word ladder of length 1
+example shortest word ladder:
+    print
+    paint
+elapsed time: 67 milliseconds
+
+word1 = forty
+word2 = fifty
+shortest word ladder of length 4
+example shortest word ladder:
+    forty
+    forth
+    firth
+    fifth
+    fifty
+elapsed time: 66 milliseconds
+
+word1 = cheat
+word2 = solve
+shortest word ladder of length 13
+example shortest word ladder:
+    cheat
+    chert
+    chart
+    charm
+    chasm
+    chase
+    cease
+    lease
+    leave
+    heave
+    helve
+    halve
+    salve
+    solve
+elapsed time: 66 milliseconds
+
+word1 = worry
+word2 = happy
+no word ladder exists
+elapsed time: 66 milliseconds
+
+word1 = smile
+word2 = frown
+shortest word ladder of length 12
+example shortest word ladder:
+    smile
+    smite
+    spite
+    spice
+    slice
+    slick
+    click
+    crick
+    crock
+    crook
+    croon
+    crown
+    frown
+elapsed time: 68 milliseconds
+
+word1 = small
+word2 = large
+shortest word ladder of length 16
+example shortest word ladder:
+    small
+    shall
+    shale
+    share
+    shard
+    chard
+    charm
+    chasm
+    chase
+    cease
+    tease
+    terse
+    verse
+    verge
+    merge
+    marge
+    large
+elapsed time: 65 milliseconds
+
+word1 = black
+word2 = white
+shortest word ladder of length 8
+example shortest word ladder:
+    black
+    slack
+    shack
+    shank
+    thank
+    thane
+    thine
+    whine
+    white
+elapsed time: 67 milliseconds
+
+word1 = greed
+word2 = money
+no word ladder exists
+elapsed time: 64 milliseconds
+
+--------------------------------------------------------------------------------
+dijkstra
+--------
+
+word1 = blare
+word2 = blase
+minimum path distance 1
+path with minimum distance:
+    blare
+    blase
+elapsed time: 67 milliseconds
+
+word1 = blond
+word2 = blood
+minimum path distance 1
+path with minimum distance:
+    blond
+    blood
+elapsed time: 70 milliseconds
+
+word1 = allow
+word2 = alloy
+minimum path distance 2
+path with minimum distance:
+    allow
+    alloy
+elapsed time: 70 milliseconds
+
+word1 = cheat
+word2 = solve
+minimum path distance 96
+path with minimum distance:
+    cheat
+    chert
+    chart
+    charm
+    chasm
+    chase
+    cease
+    lease
+    leave
+    heave
+    helve
+    halve
+    salve
+    solve
+elapsed time: 72 milliseconds
+
+word1 = worry
+word2 = happy
+no path exists
+elapsed time: 72 milliseconds
+
+word1 = print
+word2 = paint
+minimum path distance 17
+path with minimum distance:
+    print
+    paint
+elapsed time: 68 milliseconds
+
+word1 = small
+word2 = large
+minimum path distance 118
+path with minimum distance:
+    small
+    shall
+    shale
+    share
+    shard
+    chard
+    charm
+    chasm
+    chase
+    cease
+    tease
+    terse
+    verse
+    verge
+    merge
+    marge
+    large
+elapsed time: 79 milliseconds
+
+word1 = black
+word2 = white
+minimum path distance 56
+path with minimum distance:
+    black
+    slack
+    shack
+    shank
+    thank
+    think
+    thine
+    whine
+    white
+elapsed time: 73 milliseconds
+ 
+word1 = greed
+word2 = money
+no path exists
+elapsed time: 71 milliseconds
+dijkstra
+--------
