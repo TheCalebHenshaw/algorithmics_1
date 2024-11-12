@@ -18,22 +18,20 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		
-		System.out.println("wordladder \n ------------ \n");
+		System.out.println("------------ \n wordladder\n");
 		HashSet<String> words = new HashSet<>();
 
 
 		long start = System.currentTimeMillis();
 
-		//String inputFileName = args[0]; // dictionary filename
-		//String word1 = args[1]; // first word
-		//String word2 = args[2]; // second word
+		String inputFileName = args[0]; // dictionary filename
+		String word1 = args[1]; // first word
+		String word2 = args[2]; // second word
 
 
 
+		System.out.println("word1 = " + word1 + "\nword2 = " + word2 + "\n");
 
-		String inputFileName = "assessed_exercise\\wordladder\\words5.txt";
-		String word1 = "print";
-		String word2 = "paint";
 
 
 
@@ -110,6 +108,7 @@ public class Main {
 			System.out.println("Length of shortest path: " + pathLength);
 		
 			// Convert indices back to words and print the ladder
+			System.out.println("shortest word ladder:");
 			for (int idx : pathIndices) {
 				String word = indexToWord.get(idx);
 				System.out.println(word);
@@ -122,6 +121,7 @@ public class Main {
 		// end timer and print total time
 		long end = System.currentTimeMillis();
 		System.out.println("\nElapsed time: " + (end - start) + " milliseconds");
+		System.out.println("---------------\n");
 	}
 
 }
