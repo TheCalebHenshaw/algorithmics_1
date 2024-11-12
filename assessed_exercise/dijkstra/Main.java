@@ -23,7 +23,7 @@ public class Main {
 		String word2 = args[2]; // second word
 		
 
-		System.out.println(word1 + "\n" + word2 + "\n");
+		System.out.println("word1 = " + word1 + "\nword2 = " + word2 + "\n");
 
 
 
@@ -116,7 +116,7 @@ public class Main {
 				totalDistance += weight;
 			}
 			System.out.println("Minimum path distance: " + totalDistance);
-
+			System.out.println("path with minimum distance: ");
 			for(int idx : pathIndices){
 				String word = indexToWord.get(idx);
 				System.out.println(word);
@@ -129,6 +129,7 @@ public class Main {
 		// end timer and print total time
 		long end = System.currentTimeMillis();
 		System.out.println("\nElapsed time: " + (end - start) + " milliseconds");
+		System.out.println("-------------");
 	}
 	
 	
